@@ -2,7 +2,7 @@
 
 ### by Marney Pratt
 
-### Last updated on March 9, 2022
+### Last updated on March 10, 2022
 
 This webpage details how to download this project which includes all the files you need to analyze data for your Freshwater Macroinvertebrate Project for Bio 131.
 
