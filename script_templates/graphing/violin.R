@@ -3,8 +3,8 @@
 
 
 ggplot(
-  data = ___, 
-  aes(x = ___, y = ___, fill = ___)) + 
+  data = ___,                           #put the data frame name here
+  aes(x = ___, y = ___, fill = ___)) +  #same factor is x and fill, y = continuous variable
   geom_violin() +
   ylab("___") +
   xlab("___") +

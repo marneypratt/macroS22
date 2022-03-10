@@ -22,7 +22,8 @@ ggplot(
   ylab("___") +
   xlab("___") +
   coord_cartesian(expand=TRUE) +
-  theme_classic(base_size=16)  
+  theme_classic(base_size=16) +
+  facet_wrap(vars(___))   #3rd factor here
 
 
 #see the resources below for some additional options to make a nice plot 

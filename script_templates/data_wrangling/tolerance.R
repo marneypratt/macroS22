@@ -1,25 +1,26 @@
 
 # make sure the 'tidyverse' package is installed and loaded to run the code below
 
-# macro and master.taxa data must both be imported before you can run the code below
+# macro data must be imported before you can run the code below
 
-macro.tol <- ___ %>% #replace blank with data frame name
-  
-  #join taxonomic information 
-  left_join(., master.taxa) %>% 
+macro.tol <- macro %>% 
 
   # remove missing values
   dplyr::filter(!is.na(number), !is.na(tolerance)) %>% 
   
-  # make sure each taxa is summarized usng organism_aggr and within sampleID
-  #you can add more grouping variables if desired (year, season, siteID, location etc)
-  group_by(sampleID, organism_aggr, ___) %>% 
+  # multiply the tolerance value times the number present for each kind of organism in each sampleID
+  # change group_by function to remove or add grouping variables as needed 
+  # but you MUST keep organism_aggr and sampleID in the group_by statement
+  group_by(sampleID, organism_aggr, year, season, location) %>% 
   dplyr::summarise(num = sum(number), 
                    tol = mean(tolerance)) %>% 
   mutate(x.t = num*tol)
 
+# calculate the HBI for each sampleID
+# change group_by function to remove or add grouping variables as needed 
+#but you must keep sampleID in the group_by statement
 macro.HBI <- macro.tol %>% 
-  group_by(___, sampleID) %>% #replace blank with grouping variable
+  group_by(year, season, location, sampleID) %>% 
   dplyr::summarise(x.t.sum = sum(x.t),
                    total.n = sum(num)) %>% 
   mutate(HBI = x.t.sum/total.n)

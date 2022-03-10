@@ -6,20 +6,20 @@
 
 # first calculate the sample size
 sample_size = ___ %>% #put the data frame name here
-  group_by(___) %>%  #put the grouping variable name here
+  group_by(___) %>%  #factor here
   summarize (num=n())
 
 
 #violin plot with box plots and sample sizes
-___ %>%   #put the data frame name here
-  left_join(sample_size, by="___") %>% #put the grouping variable name here
-  mutate(myaxis = paste0(___, "\n", "n=", num)) %>%  #put the grouping variable name here
-  ggplot(aes(x=myaxis, y=___, fill=___)) + #put the y-variable first and then the grouping variable for fill
-  geom_boxplot(outlier.shape= NA) +  #remove the outliers when all the points are included
-  geom_quasirandom(
-    aes(x= ___, y = ___, fill = ___),   #adds quasirandom jittered points but colors them by fill
-    shape=21, size=1, alpha = 0.5, width=0.25) + #sets the size, shape, and transparency of the points
-  stat_summary(fun=mean, geom="point", shape=4, size=2, colour="black", stroke=2) + #adds mean with an X
+___ %>%   #put the same data frame name here as above
+  left_join(sample_size, by="___") %>% #put the same factor as above here
+  mutate(myaxis = paste0(___, "\n", "n=", num)) %>%  #put the same factor as above here
+  ggplot(aes(x=myaxis, y=___, fill=___)) + #continuous variable = y, same factor as above = fill,
+  geom_boxplot(width=0.2, alpha=0.5,      #adjust these values as needed
+               outlier.shape= NA) +       #remove the outliers when all the points are included
+  geom_quasirandom(aes(color=___),  #same factor as above here
+                   shape=21, size=1, alpha = 0.5, width=0.25) + #sets the size, shape, and transparency of the points
+  stat_summary(fun=mean, geom="point", shape=4, size=2, colour="black", stroke=2) +  #adds mean with an X
   ylab("___") +
   xlab("___") +
   coord_cartesian(expand=TRUE) +

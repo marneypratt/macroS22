@@ -3,7 +3,7 @@
 
 df.sum <- ___ %>% # put the name of the data frame here
   filter(!is.na(___)) %>% # remove missing values from the variable of interest
-  group_by(___) %>% # put the name of the grouping variable here
+  group_by(___) %>% # put the name of the grouping variable(s) here
   summarize(mean = mean(___), # put the name of the variable you want to summarize in this & following blanks
             median = median(___), 
             SD = sd(___), 

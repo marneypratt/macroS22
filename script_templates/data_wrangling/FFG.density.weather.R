@@ -1,17 +1,13 @@
 
 # make sure the 'tidyverse' package is installed and loaded to run the code below
 
-# macro and master.taxa data must both be imported before you can run the code below
+# macro and weather data must both be imported before you can run the code below
   
   macro.ffg <- macro %>% 
     
     #calculate density for each row
     mutate(invDens = number/benthicArea) %>% 
-    
-    #join taxonomic information 
-    left_join(., master.taxa) %>% 
-  
-  
+
   # Sum each FFG density for each sampleID 
   group_by(sampleID, FFG) %>% 
   dplyr::summarise (ffgDens = sum(invDens, na.rm = TRUE)) %>% 
@@ -31,7 +27,7 @@
   variables <- macro %>% 
     
     #add or remove any variables from the original dataset that you want present
-    #make sure you keep sampleID because this is what is used to match the data
+    #make sure you keep sampleID because this is what is used to match the data 
     select(sampleID, date, location, year, season) %>% 
     distinct()
   
@@ -42,4 +38,11 @@
     bind_rows(macro.ffg.na) %>% 
     
     #add variables of interest to final dataset
-    left_join(., variables)
+    left_join(., variables) %>% 
+    
+    #add weather data
+    left_join(., weather)
+  
+  
+  
+  

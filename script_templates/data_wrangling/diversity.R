@@ -1,13 +1,10 @@
 
 # make sure the `vegan` and 'tidyverse' packages are installed and loaded to run the code below
 
-# macro and master.taxa data must both be imported before you can run the code below
+# macro data must both be imported before you can run the code below
 
 # remove missing values, and make sure each taxon is summarized within sampleID
 macro.long <- macro %>%  
-  
-  #join taxonomic information 
-  left_join(., master.taxa) %>% 
   
   dplyr::filter(!is.na(number)) %>% 
   dplyr::select(sampleID, organism_aggr, number) %>% 
@@ -35,28 +32,31 @@ effective.sp <- exp(H)
 
 
 #Richness
-sp.rich <- specnumber(macro.wide) 
+rich <- specnumber(macro.wide) 
 
 #Max possible diversity
-max.H <- log(sp.rich)
+max.H <- log(rich)
 
 
 #Pielou's Evenness J 
 J <- H / max.H
 
 #put all diversity values into a single data frame
-macro.div <- data.frame(H, effective.sp, sp.rich, max.H, J) %>% 
+macro.div <- data.frame(H, effective.sp, rich, max.H, J) %>% 
   tibble::rownames_to_column("sampleID")
 
 
-#macro.div at this point only has the sampleID and the diversity measures
-#if you want to add back in some other variables, you can do that using the code below
-mydf <- ___ %>%  #place the name of the original data frame (with all the variables of interest included) here
-  select(sampleID, ___) %>% #add in the names of any variables you want in the final data
+# select other variables you want present in your final dataset
+variables <- macro %>% 
+  
+  #add or remove any variables from the original dataset that you want present
+  #make sure you keep sampleID because this is what is used to match the data
+  select(sampleID, date, location, year, season) %>% 
   distinct()
 
 #this script takes the macro.div and joins it with the mydf one we just created
 #sampleID is the "key" used to match up the two data frames
-macro.div <- left_join(macro.div, mydf)
+macro.div <- left_join(macro.div, variables)
+
 
 

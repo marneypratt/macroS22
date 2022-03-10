@@ -1,25 +1,21 @@
 
 # make sure the 'tidyverse' package is installed and loaded to run the code below
 
-# macro and master.taxa data must both be imported before you can run the code below
+# macro data must be imported before you can run the code below
 
-macro.density <- ___ %>% #replace blank with data frame name
+macro.density <- macro %>% 
   
   #calculate density for each row
   mutate(invDens = number/benthicArea) %>% 
   
-  #join taxonomic information 
-  left_join(., master.taxa) %>% 
   
   # Sum for each sampleID and the different taxa 
-  # remove the organism_aggr variable if you want
   # density of ALL macroinvertebrates
-  # replace blank in the group_by function with grouping variables as needed 
-  # such as season, location, year, etc
+  # change group_by function to remove or add grouping variables as needed 
   # if you want a specific group of organisms, add that column name into 
-  #the list of grouping variables (family, organism_aggr, etc)
-  #then filter for the organism or group you want
-  group_by(sampleID, ___) %>% 
+  # the list of grouping variables (family, organism_aggr, FFG, etc)
+  # then filter for the organism or group you want
+  group_by(sampleID, season, location, year) %>% 
   dplyr::summarise (density = sum(invDens, na.rm = TRUE)) 
 
 

@@ -5,10 +5,9 @@
 
 
 ggplot(
-  data = ___, 
-  aes(x = ___, y = ___)) + 
+  data = ___, #put the data frame name here
+  aes(x = ___, y = ___, fill=___)) + #factor = x and fill, continuous variable = y
   geom_quasirandom(
-    aes(x= ___, y = ___, fill = ___), 
     shape=21, size=3, alpha = 0.75, width=0.3) +
   stat_summary(fun = median, fun.min = median, fun.max = median, #change median to mean if desired
                geom = "crossbar", na.rm = TRUE,

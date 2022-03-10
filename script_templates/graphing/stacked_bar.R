@@ -2,8 +2,8 @@
 #this code will make stacked bar graphs for relative abundance of functional feeding groups
 
 ggplot(
-  data=___
-  aes(x=____,y=relab, fill = FFG))+
+  data=___ # put the data frame here
+  aes(x=____,y=relab, fill = FFG))+ #put 1st factor as x 
   geom_bar(position = "fill", stat="identity")+
   ylab("Relative Abundance\n") +
   scale_fill_discrete(name="Functional Feeding Groups",

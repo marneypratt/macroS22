@@ -1,12 +1,9 @@
 
 # make sure the 'tidyverse' package is installed and loaded to run the code below
 
-# macro and master.taxa data must both be imported before you can run the code below
+# macro data must both be imported before you can run the code below
 
-macro.ffg <- ___ %>% #replace blank with data frame name
-  
-    #join taxonomic information 
-    left_join(., master.taxa) %>% 
+macro.ffg <- macro %>% 
     
     # Sum FFG for each sampleID 
     group_by(sampleID, FFG) %>% 
@@ -33,10 +30,11 @@ macro.ffg <- ___ %>% #replace blank with data frame name
     filter(is.na(FFG) & relab > 0)
   
   # select other variables you want present in your final dataset
-  variables <- ____ %>% # put the original data here (macro or macro.env)
+  variables <- macro %>% 
     
-    #replace blank with variables from the original dataset that you want present 
-    select(sampleID, date, location, year, season, ___) %>% 
+    #add or remove any variables from the original dataset that you want present
+    #make sure you keep sampleID because this is what is used to match the data
+    select(sampleID, date, location, year, season) %>% 
     distinct()
   
   

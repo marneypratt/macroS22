@@ -4,10 +4,10 @@
 
 
 #first calculate the mean, sd, & count the observations in each group
-df.sum <- ___ %>%
-  group_by(___) %>%
-  summarise(mean = mean(___), 
-            sd = sd(___), 
+df.sum <- ___ %>%             #data frame name here
+  group_by(___) %>%           #name of factor here
+  summarise(mean = mean(___), #continuous variable here
+            sd = sd(___),     #same continuous variable as above here
             n = n()) %>%
   
   #calculate the standard error
@@ -22,7 +22,7 @@ ggplot(
   geom_errorbar(aes(ymin=mean-sem, ymax=mean+sem), width=0.1, size=1) +
   ylab("___") +
   xlab("___") +
-  coord_cartesian(xlim = c(0.5,4.5), ylim = c(0,5), expand=FALSE) +
+  coord_cartesian(xlim = c(0.5,2.5), expand=FALSE) +
   theme_classic(base_size=16) +
   theme(legend.position="none")
 

@@ -4,13 +4,14 @@
 #make sure the 'flextable' and `tidyverse` packages are installed and loaded
 #make sure your data are imported
 
+library(flextable)
 
 #set the variable you want to summarize
 x.var <- "___" #put the name of the column you want to summarize in the blank here
 
 #calculate descriptive stats
-df.sum <- ____ %>% #put the name of the data frame here
-  group_by(____) %>% #put the grouping variable(s) here
+df.sum <- ___ %>% #put the name of the data frame here
+  group_by(___) %>% #put the grouping variable(s) here
   summarise(mean = round(mean(.data[[x.var]]), digits=2), #change the digits as needed
             SD = signif(sd(.data[[x.var]]), digits=2),
             median = round(median(.data[[x.var]]), digits=2),

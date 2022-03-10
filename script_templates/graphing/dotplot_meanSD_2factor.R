@@ -6,7 +6,7 @@
 
 ggplot(
   data = ___,   #put the data frame name here
-  aes(x = ___, y = ___, fill = ___, color = ___)) +  
+  aes(x = ___, y = ___, fill = ___, color = ___)) +  #one factor goes with x, the other factor is fill and color
   geom_quasirandom(
     shape=21, size=2, alpha = 0.5, width=0.2, #play with these values as needed
     dodge.width = 1) + #adjust the dodge width as needed
@@ -16,12 +16,12 @@ ggplot(
                na.rm = TRUE, 
                width = 0.4, size = 0.75, #play with these values as needed
                color = "black",
-               position=position_dodge(width=1)) + #match this width to dodge.width above
+               position=position_dodge(width=1),
+               show.legend = FALSE) + #match this width to dodge.width above
   ylab("___") +
   xlab("___") +
   coord_cartesian(expand=TRUE) +
-  theme_classic(base_size=16)  +
-  theme(legend.position="none") # remove this line if you DO want a legend/key
+  theme_classic(base_size=16)  
 
 
 #see the resources below for some additional options to make a nice plot 

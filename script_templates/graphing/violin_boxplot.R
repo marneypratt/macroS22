@@ -3,10 +3,10 @@
 
 
 ggplot(
-  data = ___, 
-  aes(x = ___, y = ___, fill = ___)) + 
-  geom_violin(width=1.4) +
-  geom_boxplot(width=0.1, color="black", alpha=0.8) +
+  data = ___,                               #put the data frame name here
+  aes(x = ___, y = ___, fill = ___)) +      #factor = x and fill, y = continuous variable
+  geom_violin(width=0.5, alpha=0.2) +                  #adjust values as needed
+  geom_boxplot(width=0.1, color="black", alpha=0.8) +  #adjust values as needed
   ylab("___") +
   xlab("___") +
   theme_classic(base_size=18) +
