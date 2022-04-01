@@ -83,28 +83,29 @@ METHODOLOGICAL INFORMATION
 1. Description of methods used for collection/generation of data: 
 <Include links or references to publications or other documentation containing experimental design or protocols used in data collection>
 
-Methods: Investigators sampled several quadrats (usually 10) in each site on each date.  For each 50 cm x 50 cm quadrat
+Methods: Investigators sampled in each of five microhabitats in each site on each date.  
 
 Aquatic macroinvertebrates were sampled from riffle habitats (areas with a rocky bottom, shallow depth, rippled water surface, and relatively fast water flow) 
 by kick-sampling using D-nets (LaMotte D-net, 0.3m base opening & 500 micron mesh).  Nets were placed downstream with the opening facing upstream.  
-A quadrat was placed in front of the net, the area sampled was 0.5 m x 0.5m.  
+A quadrat was placed in front of the net, the area sampled was 0.5 m x 0.5m.  1-2 quadrats were sampled in each microhabitat.
 
 
 Larger rocks were picked up and any organisms found on the rocks were picked off and placed in a tub of river water.
 Once all larger rocks were cleaned off and placed outside of the quadrat, the substratum was disturbed by shuffling and kicking an investigator's boots on the 
 bottom of the river for 30 seconds to 1 minute making sure that the D-net caught anything disturbed by the kicking. 
 The contents of the net were rinsed into the tub of water.  
-This process was repeated 8-11 times per site, and all samples from a site were either joined into one composite sample (Fall 2018) or kept separate by microhabitat (Summer 2018, Fall & Summer 2019).  
+This process was repeated in each of the 5 microhbaitat in each site, and all samples from a site were either joined into one composite sample (Fall 2018) or kept separate by microhabitat (Summer 2018, Fall & Summer 2019).  
 
 
-In each location (upstream and downstream of Paradise Pond) we sampled 5 microhabitats.  We usually sampled 2 quadrats in each microhabitat for a total of 10 quadrats sampled in a location on a particular day.  
+In each location (upstream and downstream of Paradise Pond) we sampled 5 microhabitats.  We usually sampled 1-2 quadrats in each microhabitat for a total of 5-10 quadrats sampled in a location on a particular day.  
 
  
 After collecting in the field, samples were taken back to the lab and sorted into categories (mostly at the order or family level) and then preserved in 
 70% ethyl alcohol.  Later, each organism was identified to the lowest level possible (down to genus for most things, species for some, and higher taxonomic 
-levels for some difficult to identify organisms such as worms and midges in the fall sampling times).
+levels for some difficult to identify organisms such as worms and midges).
 
-Note that because of heavy rains in Fall 2018, sampling was very difficult.  The 3rd downstream sample did not sample the sponge microhabitat (DSP) so there were only 8 quadrats taken for that sample, while 11 quadrats were taken in the 3rd upstream sample.
+Note that because of heavy rains in Fall 2018, sampling was very difficult.  The 3rd downstream sample did not sample the sponge microhabitat (DSP) so there were only 
+8 quadrats taken for that sample, while 11 quadrats were taken in the 3rd upstream sample.
 
 
 
